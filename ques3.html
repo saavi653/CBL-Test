@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    str= ['J','Z','D','Q','L','W','A','H','Y','K','G','N','V','R','P','X','C','M','F','O','U','S','I','E','T','B'];
+    newStr=str.join('');
+    
+    // converting alphabets to its ascii value
+    const asciiArr=[];
+    for(i=0;i<str.length;i++)
+    {
+        let asciiValue = newStr.charCodeAt(i);
+        asciiArr.push(asciiValue);
+   
+    }
+    
+    // sorting on ascii value
+    for(let i=0;i<asciiArr.length;i++)
+    {
+        for(let j=0;j<asciiArr.length;j++)
+        {
+            if(asciiArr[j] > asciiArr[j+1])
+            {
+                let temp= asciiArr[j+1];
+                asciiArr[j+1]=asciiArr[j];
+                asciiArr[j]=temp;
+            }
+        }
+    }
+
+    // converting ascii value to its alphabets
+    const newArray=[];
+    for(i=0;i<asciiArr.length;i++)
+    {
+        let alphabet = String.fromCharCode(asciiArr[i]);
+        newArray.push(alphabet);
+    }
+
+    console.log(newArray);
+</script>
+</html>

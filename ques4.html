@@ -15,12 +15,12 @@
             const arr=[];
             let resp = await data;
             let value = await resp.json();
-            let count = 0;
+            let limit = 5;
             value.forEach(element => {
-                if(count<5)
+                if(limit > 0)
                 {
                     arr.push(element['title']);
-                    count++;
+                    limit--;
                 }
             });
             console.log(arr);

@@ -8,14 +8,14 @@
 <body>
 </body>
 <script>
-    var data= fetch('https://jsonplaceholder.typicode.com/posts');
+    var data= fetch('https://jsonplaceholder.typicode.com/posts'); //fetching data of api
     
     async function getData() {
         try {
             const arr=[];
             let resp = await data;
             let value = await resp.json();
-            let limit = 5;
+            let limit = 5; // set limit 5 to get only 5 titles
             value.forEach(element => {
                 if(limit > 0)
                 {
